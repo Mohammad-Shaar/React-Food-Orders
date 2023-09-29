@@ -1,0 +1,93 @@
+.cart-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 20rem;
+  overflow: auto;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+@media (min-width: 768px) {
+  .actions {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .actions-center {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+.actions-center {
+  justify-content: center;
+}
+
+.actions-center p {
+  font-size: 1.2rem;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #8a2b06;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #5a1a01;
+  border-color: #5a1a01;
+  color: white;
+}
+
+.actions .button--alt {
+  color: #8a2b06;
+}
+
+.actions .button {
+  background-color: #8a2b06;
+  color: white;
+}
+
+.noOrder {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:active {
+  background-color: #ccc;
+  color: #292929;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.final-masseg {
+  width: 80%;
+  margin-inline: auto;
+  text-align: center;
+}
