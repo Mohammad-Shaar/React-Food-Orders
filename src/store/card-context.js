@@ -11,12 +11,13 @@ const CardContext = React.createContext({
   submitState: {},
   sucsses: false,
   showLogMasseg: false,
-  onshowLogMasseg: () => {},
-  onhideLogMasseg: () => {},
+  onShowLogMasseg: () => {},
+  onHideLogMasseg: () => {},
   showCard: false,
   showCardOrderdHandler: () => {},
   hideCardOrderdHandler: () => {},
   userDataForOrder: {},
+  onSetShowOrderAfterLog: () => {},
 });
 
 export default CardContext;

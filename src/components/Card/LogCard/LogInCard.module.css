@@ -9,7 +9,7 @@
 }
 
 .form-control {
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .form-control input,
@@ -50,6 +50,8 @@
 
 .error-text {
   color: #b40e0e;
+  margin-top: 3px;
+  margin-bottom: 0;
 }
 
 .button {

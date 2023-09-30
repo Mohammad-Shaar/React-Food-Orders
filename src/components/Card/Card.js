@@ -14,7 +14,8 @@ const Card = (props) => {
   const [orderError, setOrderError] = useState(null);
 
   const cardCtx = useContext(CardContext);
-  const { showLogMasseg, onShowLogMasseg, userDataForOrder } = cardCtx;
+  const { showLogMasseg, onShowLogMasseg, onHideLogMasseg, userDataForOrder } =
+    cardCtx;
 
   const orderHandler = async () => {
     if (props.logState) {
@@ -54,18 +55,24 @@ const Card = (props) => {
         cardCtx.newOrder();
       }
     } else {
-      onShowLogMasseg(true);
+      onShowLogMasseg();
     }
   };
 
   const logInHandler = () => {
     props.onClickLog();
     props.onLogIn();
+    cardCtx.onSetShowOrderAfterLog();
   };
 
   const closeHandler = () => {
     props.onHideCard();
     btnOrder.btnNew && cardCtx.newOrder();
+  };
+
+  const logMassegCloseHandler = () => {
+    props.onHideCard();
+    onHideLogMasseg();
   };
 
   const cardItemRemoveHandler = (id) => {
@@ -132,7 +139,7 @@ const Card = (props) => {
               </button>
               <button
                 className={styles["button--alt"]}
-                onClick={props.onHideCard}
+                onClick={logMassegCloseHandler}
               >
                 Close
               </button>

@@ -88,6 +88,7 @@ const CardProvider = (props) => {
   const [sucsses, setSucsses] = useState(false);
   const [showLogMasseg, setShowLogMasseg] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showOrderAfterLog, setShowOrderAfterLog] = useState(false);
   const [userDataForOrder, setUserDataForOrder] = useState({});
 
   // item is an object with meal data
@@ -130,36 +131,17 @@ const CardProvider = (props) => {
       data.resetPassword();
       data.onLogIn();
       data.onHideCard();
-      hideLogMassegHandler();
+      setShowLogMasseg(false);
+
+      if (showOrderAfterLog) {
+        setShowCard(true);
+        setShowOrderAfterLog(false);
+      }
     } catch (err) {
       dispatchSubmitState({ type: "error", value: "Somthing went wrong" });
     }
 
     dispatchSubmitState({ type: "submiting", value: false });
-  };
-
-  const showCardOrderdHandler = () => {
-    setShowCard(true);
-  };
-
-  const hideCardOrderdHandler = () => {
-    setShowCard(false);
-  };
-
-  const showLogMassegHandler = () => {
-    setShowLogMasseg(true);
-  };
-
-  const hideLogMassegHandler = () => {
-    setShowLogMasseg(false);
-  };
-
-  const logedInHandler = () => {
-    setIsLoggedIn(true);
-  };
-
-  const logedOutHandler = () => {
-    setIsLoggedIn(false);
   };
 
   // this is the object that will be updated
@@ -173,15 +155,16 @@ const CardProvider = (props) => {
     submitState: submitState,
     sucsses: sucsses,
     showLogMasseg: showLogMasseg,
-    onShowLogMasseg: showLogMassegHandler,
-    onHideLogMasseg: hideLogMassegHandler,
+    onShowLogMasseg: () => setShowLogMasseg(true),
+    onHideLogMasseg: () => setShowLogMasseg(false),
     isLoggedInValue: isLoggedIn,
-    logedInHandler: logedInHandler,
-    logedOutHandler: logedOutHandler,
+    logedInHandler: () => setIsLoggedIn(true),
+    logedOutHandler: () => setIsLoggedIn(false),
     showCard: showCard,
-    showCardOrderdHandler: showCardOrderdHandler,
-    hideCardOrderdHandler: hideCardOrderdHandler,
+    showCardOrderdHandler: () => setShowCard(true),
+    hideCardOrderdHandler: () => setShowCard(false),
     userDataForOrder: userDataForOrder,
+    onSetShowOrderAfterLog: () => setShowOrderAfterLog(true),
   };
 
   return (

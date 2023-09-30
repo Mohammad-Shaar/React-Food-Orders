@@ -77,6 +77,7 @@ const LogInCard = (props) => {
             value={enterdName}
             onBlur={nameBlurHandler}
             onChange={nameChangeHandler}
+            autoComplete="name"
           />
           {nameInputHasError && (
             <p className={styles["error-text"]}>Name should not be empty</p>
@@ -96,6 +97,7 @@ const LogInCard = (props) => {
             value={enterdEmail}
             onBlur={emailBlurHandler}
             onChange={emailChangeHandler}
+            autoComplete="email"
           />
           {emailInputHasError && (
             <p className={styles["error-text"]}>Email should contain '@'</p>
@@ -115,6 +117,7 @@ const LogInCard = (props) => {
             value={enterdPassword}
             onBlur={passwordBlurHandler}
             onChange={passwordChangeHandler}
+            autoComplete="off"
           />
           {passwordInputHasError && (
             <p className={styles["error-text"]}>
