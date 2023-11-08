@@ -18,7 +18,7 @@
 
 ### What I learned
 
-This project was a culmination of my React journey, where I applied all the skills and concepts I had learned along the way.
+In this project I applied all the skills and concepts I had learned along the way:
 
 - I used functional components to create reusable and modular UI elements, and passed props to customize their behavior and appearance.
 - I also learned how to render different components based on certain conditions, and how to manage the state of my application using hooks.

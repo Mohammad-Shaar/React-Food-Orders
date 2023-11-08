@@ -10,7 +10,7 @@ import Meals from "./components/Meals/Meals";
 const App = () => {
   const [showLogCard, setShowLogCard] = useState(false);
 
-  const { isLoggedInValue, logedInHandler, logedOutHandler } =
+  const { isLoggedInValue, logedInHandler, errorSubmit, logedOutHandler } =
     useContext(CardContext);
 
   const { showCard, showCardOrderdHandler, hideCardOrderdHandler } =
@@ -22,6 +22,7 @@ const App = () => {
 
   const hideCardLogHandler = () => {
     setShowLogCard(false);
+    errorSubmit();
   };
 
   return (

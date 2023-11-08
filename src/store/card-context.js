@@ -9,6 +9,7 @@ const CardContext = React.createContext({
   newOrder: () => {},
   onSubmitionData: () => {},
   submitState: {},
+  errorSubmit: () => {},
   sucsses: false,
   showLogMasseg: false,
   onShowLogMasseg: () => {},

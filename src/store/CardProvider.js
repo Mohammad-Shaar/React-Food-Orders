@@ -153,6 +153,7 @@ const CardProvider = (props) => {
     newOrder: newOrderHandler,
     onSubmitionData: userDataHandler,
     submitState: submitState,
+    errorSubmit: () => dispatchSubmitState({ type: "error", value: null }),
     sucsses: sucsses,
     showLogMasseg: showLogMasseg,
     onShowLogMasseg: () => setShowLogMasseg(true),
